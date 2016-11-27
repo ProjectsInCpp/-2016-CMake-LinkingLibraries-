@@ -1,10 +1,7 @@
 cmake_minimum_required (VERSION 2.6)
- 
 project (LinkLibraries_Test)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
-
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
 
 # To make folders in project
 #set(FLYWEIGHT
@@ -16,6 +13,8 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
 if(MSVC)
   set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /MTd")
   set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_DEBUG} /MTd")
+else()
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
 endif()
 
 add_subdirectory(LinkingLibraries)
